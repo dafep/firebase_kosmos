@@ -38,7 +38,7 @@ class _CloudUpdateState extends State<CloudUpdate> {
                 context: context,
               );
             },
-            child: new Text("Set data"),
+            child: new Text("Update data"),
           ),
         ),
       ),
