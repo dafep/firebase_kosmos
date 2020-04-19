@@ -67,6 +67,11 @@ class Auth {
     }
   }
 
+  static currentUser() async {
+    final FirebaseUser currentUser = await auth.currentUser();
+    return currentUser.email;
+  }
+
   static logOutAuth() async {
     await auth.signOut();
     return SUCCESS;
