@@ -51,12 +51,12 @@ class FirebaseKosmos {
     }
   }
 
-  static authLogOut() {
-    return Auth.logOutAuth();
+  static authLogOut() async {
+    return await Auth.logOutAuth();
   }
 
-  static currentUser() {
-    return Auth.currentUser();
+  static currentUser() async {
+    return await Auth.currentUser();
   }
 
   /* Cloud */
