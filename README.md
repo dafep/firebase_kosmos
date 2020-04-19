@@ -1,14 +1,11 @@
 # firebase_kosmos
 
+[![version](https://img.shields.io/badge/version-1.0.1-yellow.svg)](https://semver.org)
+
 A new Flutter package project.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+firebase_kosmos is an ibrairy of flutter which allows to facilitate the installation of connection, inscription, the connections via the social networks API, reset its password, disconnection is well other you could see that there is a folder "example" which is present in this project which makes it possible to see how to use this package.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+Fun for you.
