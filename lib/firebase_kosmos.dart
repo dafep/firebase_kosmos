@@ -55,6 +55,10 @@ class FirebaseKosmos {
     return Auth.logOutAuth();
   }
 
+  static currentUser() {
+    return Auth.currentUser();
+  }
+
   /* Cloud */
 
   static cloudSet({String email, Map<String, dynamic> map, String cloud, bool debugMode, context}) async {
