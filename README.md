@@ -1,11 +1,8 @@
 # firebase_kosmos
-<a href="https://github.com/Solido/awesome-flutter">
-   <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square" />
-</a>
+
+[![Kosmos](https://img.shields.io/badge/kosmos-blue.svg)](https://kosmos-digital.com)
 
 [![version](https://img.shields.io/badge/version-1.0.1-yellow.svg)](https://semver.org)
-
-A new Flutter package project.
 
 ## Getting Started
 
