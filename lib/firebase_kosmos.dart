@@ -1,61 +1,59 @@
 library firebase_kosmos;
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'constant/authMessage.dart';
+import 'package:firebase_kosmos/alertBox/errorAlert.dart';
+import 'package:firebase_kosmos/constant/authMessage.dart';
+import 'package:firebase_kosmos/firebase/firebase_auth_kosmos.dart';
+import 'package:firebase_kosmos/firebase/firebase_cloud_kosmos.dart';
 
-class Auth {
-  static final auth = FirebaseAuth.instance;
+class FirebaseKosmos {
 
-  static signIn({String email, String password}) async {
-    try {
-      await auth.signInWithEmailAndPassword(
-        email: email,
-        password: password
-      );
+  /* Auth */
+
+  static authSignIn({String email, String password, bool debugMode, context}) async {
+    final response = await Auth.signIn(
+      email: email,
+      password: password
+    );
+
+    if (response == "OK")
       return SUCCESS;
-    } catch (e) {
-      switch (e.code) {
-        case ERROR_INVALID_EMAIL_SIGNIN:
-          return ERROR_INVALID_EMAIL_MESSAGE_SIGNIN;
-        case ERROR_WRONG_PASSWORD_SIGNIN:
-          return ERROR_WRONG_PASSWORD_MESSAGE_SIGNIN;
-        case ERROR_USER_NOT_FOUND_SIGNIN:
-          return ERROR_USER_NOT_FOUND_MESSAGE_SIGNIN;
-        case ERROR_USER_DISABLED_SIGNIN:
-          return ERROR_USER_DISABLED_MESSAGE_SIGNIN;
-        case ERROR_TOO_MANY_REQUESTS_SIGNIN:
-          return ERROR_TOO_MANY_REQUESTS_MESSAGE_SIGNIN;
-        case ERROR_OPERATION_NOT_ALLOWED_SIGNIN:
-          return ERROR_OPERATION_NOT_ALLOWED_MESSAGE_SIGNIN;
-        default:
-          return UNDEFINED_ERROR_SIGNIN;
-      }
+    else {
+      if (debugMode == true)
+        ErrorAlert.errorAlert(response, context);
+      else
+        return response;
     }
   }
 
-  static signUp({String email, String password, Map<String, dynamic> map}) async {
-    try {
-      await auth.createUserWithEmailAndPassword(email: email, password: password);
-      if (map.isNotEmpty) {
-        // cloud
-      }
+  static authSignUp({String email, String password, Map<String, dynamic> map, bool debugMode, context, String cloud}) async {
+    final response = Auth.signUp(
+      email: email,
+      password: password,
+      map: map,
+      cloud: cloud
+    );
+
+    if (response == "OK")
       return SUCCESS;
-    } catch (e) {
-      switch (e.code) {
-        case ERROR_WEAK_PASSWORD_SIGNUP:
-          return ERROR_WEAK_PASSWORD_SIGNUP_MESSAGE;
-        case ERROR_INVALID_EMAIL_SIGNUP:
-          return ERROR_INVALID_EMAIL_SIGNUP_MESSAGE;
-        case ERROR_EMAIL_ALREADY_IN_USE_SIGNUP:
-          return ERROR_EMAIL_ALREADY_IN_USE_SIGNUP_MESSAGE;
-        default:
-          return UNDEFINED_ERROR_SIGNUP;
-      }
+    else {
+      if (debugMode == true)
+        ErrorAlert.errorAlert(response, context);
+      else
+        return response;
     }
   }
 
-  static logOutAuth() async {
-    await auth.signOut();
-    return SUCCESS;
+  static authLogOut() {
+    return Auth.logOutAuth();
+  }
+
+  /* Cloud */
+
+  static cloudSet({String email, Map<String, dynamic> map, String cloud}) async {
+    await Cloud.setCloud(
+      email: email,
+      map: map,
+      cloud: cloud,
+    );
   }
 }
