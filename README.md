@@ -2,7 +2,7 @@
 
 [![Kosmos](https://img.shields.io/badge/kosmos-blue.svg)](https://kosmos-digital.com)
 
-[![version](https://img.shields.io/badge/version-1.0.2-yellow.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-1.0.3-yellow.svg)](https://semver.org)
 
 ## Getting Started
 

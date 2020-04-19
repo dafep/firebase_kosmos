@@ -1,9 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_kosmos/constant/authMessage.dart';
 import 'package:firebase_kosmos/firebase/firebase_cloud_kosmos.dart';
+import 'package:flutter/material.dart';
 
 class Auth {
   static final auth = FirebaseAuth.instance;
+
+  static Widget handleAuth(Widget index, Widget mainAppController) {
+    return StreamBuilder<FirebaseUser>(
+      stream: FirebaseAuth.instance.onAuthStateChanged,
+      builder: (context, snapshot) {
+        return (!snapshot.hasData) ? index : mainAppController;
+      },
+    );
+  }
 
   static signIn({String email, String password}) async {
     try {
