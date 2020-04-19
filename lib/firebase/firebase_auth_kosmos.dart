@@ -5,7 +5,7 @@ import 'package:firebase_kosmos/firebase/firebase_cloud_kosmos.dart';
 class Auth {
   static final auth = FirebaseAuth.instance;
 
-  static Future<String> signIn({String email, String password}) async {
+  static signIn({String email, String password}) async {
     try {
       await auth.signInWithEmailAndPassword(
         email: email,
@@ -32,7 +32,7 @@ class Auth {
     }
   }
 
-  static Future<String> signUp({String email, String password, Map<String, dynamic> map, String cloud}) async {
+  static signUp({String email, String password, Map<String, dynamic> map, String cloud}) async {
     try {
       await auth.createUserWithEmailAndPassword(email: email, password: password);
       if (map.isNotEmpty) {
