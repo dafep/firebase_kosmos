@@ -11,6 +11,10 @@ class FirebaseKosmos {
 
   /* Auth */
 
+  static handleAuth({Widget index, Widget mainAppController}) {
+    return Auth.handleAuth(index, mainAppController);
+  }
+
   static Future<dynamic> authSignIn({String email, String password, bool debugMode, context}) async {
     FocusScope.of(context).requestFocus(FocusNode());
 
