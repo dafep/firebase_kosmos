@@ -23,9 +23,10 @@ class FirebaseKosmos {
     else {
       if (debugMode == true)
         ErrorAlert.errorAlert(response, context);
-      response.then((e) {
-        return e;
-      });
+      print(response);
+      // response.then((e) {
+      //   return e;
+      // });
     }
   }
 
@@ -44,9 +45,10 @@ class FirebaseKosmos {
     else {
       if (debugMode == true)
         ErrorAlert.errorAlert(response, context);
-      response.then((e) {
-        return e;
-      });
+      print(response);
+      // response.then((e) {
+      //   return e;
+      // });
     }
   }
 
