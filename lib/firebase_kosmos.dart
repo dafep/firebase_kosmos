@@ -23,8 +23,7 @@ class FirebaseKosmos {
     else {
       if (debugMode == true)
         ErrorAlert.errorAlert(response, context);
-      else
-        return response;
+      return response;
     }
   }
 
@@ -43,8 +42,7 @@ class FirebaseKosmos {
     else {
       if (debugMode == true)
         ErrorAlert.errorAlert(response, context);
-      else
-        return response;
+      return response;
     }
   }
 
