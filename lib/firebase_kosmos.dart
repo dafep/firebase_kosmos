@@ -10,7 +10,7 @@ class FirebaseKosmos {
 
   /* Auth */
 
-  static authSignIn({String email, String password, bool debugMode, context}) async {
+  static Future<dynamic> authSignIn({String email, String password, bool debugMode, context}) async {
     FocusScope.of(context).requestFocus(FocusNode());
 
     final response = await Auth.signIn(
@@ -27,7 +27,7 @@ class FirebaseKosmos {
     }
   }
 
-  static authSignUp({String email, String password, Map<String, dynamic> map, bool debugMode, context, String cloud}) async {
+  static Future<dynamic> authSignUp({String email, String password, Map<String, dynamic> map, bool debugMode, context, String cloud}) async {
     FocusScope.of(context).requestFocus(FocusNode());
 
     final response = await Auth.signUp(
@@ -46,7 +46,7 @@ class FirebaseKosmos {
     }
   }
 
-  static authLogOut() {
+  static Future<dynamic> authLogOut() {
     return Auth.logOutAuth();
   }
 
