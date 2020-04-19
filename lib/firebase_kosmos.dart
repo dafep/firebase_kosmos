@@ -53,10 +53,20 @@ class FirebaseKosmos {
   /* Cloud */
 
   static cloudSet({String email, Map<String, dynamic> map, String cloud}) async {
-    await Cloud.setCloud(
+    final response = await Cloud.setCloud(
       email: email,
       map: map,
       cloud: cloud,
     );
+    return response;
+  }
+
+  static cloudUpdate({String email, Map<String, dynamic> map, String cloud}) async {
+    final response = await Cloud.updateCloud(
+      email: email,
+      map: map,
+      cloud: cloud,
+    );
+    return response;
   }
 }
