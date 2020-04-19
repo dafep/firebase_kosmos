@@ -21,7 +21,7 @@ class _LogoutState extends State<Logout> {
         child: new GestureDetector(
           /**********************/
           onTap: () async {
-            if (await Auth.logOutAuth() == "OK") {
+            if (await FirebaseKosmos.authLogOut() == "OK") {
               Navigator.pushNamed(context, "/");
             }
           },
