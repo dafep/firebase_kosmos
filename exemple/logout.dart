@@ -1,5 +1,5 @@
-import 'package:firebase_kosmos/firebase_kosmos.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_kosmos/firebase_kosmos.dart';
 
 class Logout extends StatefulWidget {
   @override
@@ -7,26 +7,29 @@ class Logout extends StatefulWidget {
 }
 
 class _LogoutState extends State<Logout> {
-  double screenWidth;
-  double screenHeight;
-
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
-    return Container(
-      width: screenWidth,
-      height: screenHeight,
-      child: new Center(
-        child: new GestureDetector(
-          /**********************/
-          onTap: () async {
-            if (await FirebaseKosmos.authLogOut() == "OK") {
-              Navigator.pushNamed(context, "/");
-            }
-          },
-          /**********************/
-          child: new Text("Logout"),
+    return Scaffold(
+      body: new Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: new Center(
+          child: new GestureDetector(
+            onTap: () {
+              final response = FirebaseKosmos.authLogOut();
+              // If you have added the HandleAuth function to
+              // the root of your project, you don't need to
+              // redirect the user it will be automatically
+              // redirected to the "/" route, but if you didn't
+              //use the "HandleAuth" function you have to redirect
+              //it yourself this way:
+
+              if (response == "OK") {
+                Navigator.pushNamed(context, "/");
+              }
+            },
+            child: new Text("Click me"),
+          ),
         ),
       ),
     );
