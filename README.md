@@ -1,4 +1,7 @@
 # firebase_kosmos
+<a href="https://github.com/Solido/awesome-flutter">
+   <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square" />
+</a>
 
 [![version](https://img.shields.io/badge/version-1.0.1-yellow.svg)](https://semver.org)
 
