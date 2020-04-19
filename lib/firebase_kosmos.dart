@@ -26,7 +26,7 @@ class FirebaseKosmos {
   }
 
   static authSignUp({String email, String password, Map<String, dynamic> map, bool debugMode, context, String cloud}) async {
-    final response = Auth.signUp(
+    final response = await Auth.signUp(
       email: email,
       password: password,
       map: map,
