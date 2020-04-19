@@ -10,7 +10,7 @@ class FirebaseKosmos {
 
   /* Auth */
 
-  static authSignIn({String email, String password, bool debugMode, context}) async {
+  Future<dynamic> authSignIn({String email, String password, bool debugMode, context}) async {
     FocusScope.of(context).requestFocus(FocusNode());
 
     String e = await Auth.signIn(
@@ -27,7 +27,7 @@ class FirebaseKosmos {
     return e;
   }
 
-  static authSignUp({String email, String password, Map<String, dynamic> map, bool debugMode, context, String cloud}) async {
+  Future<dynamic> authSignUp({String email, String password, Map<String, dynamic> map, bool debugMode, context, String cloud}) async {
     FocusScope.of(context).requestFocus(FocusNode());
 
     String e = await Auth.signUp(
